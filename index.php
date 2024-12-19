@@ -75,37 +75,17 @@ $total_pages = ceil($total_results / 10);
     <title>Pencarian Deskriptif Jurnal Sistem Informasi</title>
     <!-- Menambahkan Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .typed-text {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #6c757d;
-        }
-        .highlight {
-            background-color: #f8f9fa;
-            border: 2px solid #007bff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Navigasi Atas -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sistem Pencarian Jurnal</a>
+        <a class="navbar-brand" href="index.php">Sistem Pencarian Jurnal</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tentang Kami</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bantuan</a>
+</button>
                 </li>
             </ul>
         </div>
@@ -194,41 +174,6 @@ $total_pages = ceil($total_results / 10);
 <!-- Menambahkan Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script>
-    const texts = [
-        "Selamat datang, silahkan deskripsikan jurnal di lingkup sistem informasi apa yang ingin anda cari.",
-        "Senang bertemu anda, jurnal lingkup sistem informasi apa yang anda butuhkan? silahkan deskripsikan.",
-        "Apa yang anda butuhkan? biarkan saya mencarikan jurnal itu untuk anda. silahkan deskripsikan dibawah kotak ini."
-    ];
-
-    let index = 0;
-    let charIndex = 0;
-    const typedText = document.getElementById("typed-text");
-
-    function type() {
-        if (charIndex < texts[index].length) {
-            typedText.textContent += texts[index][charIndex];
-            charIndex++;
-            setTimeout(type, 100);
-        } else {
-            setTimeout(erase, 2000);
-        }
-    }
-
-    function erase() {
-        if (charIndex > 0) {
-            typedText.textContent = texts[index].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, 50);
-        } else {
-            index = (index + 1) % texts.length;
-            setTimeout(type, 500);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        type();
-    });
-</script>
+<script src="scripts.js"></script>
 </body>
 </html>
