@@ -1,7 +1,6 @@
 const texts = [
-    "Selamat datang, silahkan deskripsikan jurnal di lingkup sistem informasi apa yang ingin anda cari.",
-    "Senang bertemu anda, jurnal lingkup sistem informasi apa yang anda butuhkan? Silahkan deskripsikan.",
-    "Apa yang anda butuhkan? Biarkan saya mencarikan jurnal itu untuk anda. Silahkan deskripsikan di bawah kotak ini."
+    "Silahkan deskripsikan jurnal di lingkup sistem informasi apa yang ingin anda cari.",
+    "Apa yang anda butuhkan? Biarkan saya mencarikan jurnal itu untuk anda."
 ];
 
 let index = 0;
@@ -32,3 +31,8 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function () {
     type();
 });
+
+// Fungsi untuk mereset form
+function resetForm() {
+    document.getElementById('searchForm').reset();
+}

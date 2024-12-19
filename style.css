@@ -71,7 +71,6 @@ textarea {
 }
 
 button {
-    background: linear-gradient(90deg, #1abc9c, #16a085); /* Gradient of teal and dark green */
     border: none;
     color: white;
     font-size: 1rem;
@@ -82,7 +81,6 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(90deg, #16a085, #1abc9c); /* Reverse gradient effect on hover */
     transform: scale(1.05); /* Slight scale effect on hover */
 }
 
