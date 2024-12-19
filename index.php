@@ -73,53 +73,20 @@ $total_pages = ceil($total_results / 10);
     <title>Sistem Pencarian Jurnal Sistem Informasi</title>
     <!-- Menambahkan Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f4f9;
-            font-family: 'Arial', sans-serif;
-        }
-        .header {
-            background: linear-gradient(90deg, #007bff, #00c6ff);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        .header p {
-            font-size: 1.25rem;
-            margin: 0;
-        }
-        .search-container {
-            margin-top: 30px;
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .typed-text {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-        .search-container textarea {
-            resize: none;
-        }
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Sistem Pencarian Jurnal</h1>
-        <p>Mudah, cepat, dan sesuai kebutuhan Anda</p>
+
+<!-- Navigasi Atas -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">Sistem Pencarian Jurnal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="container mt-4">
@@ -141,44 +108,9 @@ $total_pages = ceil($total_results / 10);
         &copy; 2024 Sistem Pencarian Jurnal. Dikembangkan untuk memenuhi kebutuhan riset Anda.
     </div>
 
-    <!-- Menambahkan Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script>
-        const texts = [
-            "Selamat datang! Cari jurnal sesuai kebutuhan Anda.",
-            "Deskripsikan jurnal yang ingin Anda cari.",
-            "Pencarian jurnal kini lebih mudah dan cepat."
-        ];
-
-        let index = 0;
-        let charIndex = 0;
-        const typedText = document.getElementById("typed-text");
-
-        function type() {
-            if (charIndex < texts[index].length) {
-                typedText.textContent += texts[index][charIndex];
-                charIndex++;
-                setTimeout(type, 100);
-            } else {
-                setTimeout(erase, 2000);
-            }
-        }
-
-        function erase() {
-            if (charIndex > 0) {
-                typedText.textContent = texts[index].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(erase, 50);
-            } else {
-                index = (index + 1) % texts.length;
-                setTimeout(type, 500);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            type();
-        });
-    </script>
+<!-- Menambahkan Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
