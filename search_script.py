@@ -92,8 +92,28 @@ def search_google_scholar(input_text):
     except Exception as e:
         print(f"Error while fetching Google Scholar results: {e}")
 
-    return results
+    # Preprocessing input query
+    processed_query = preprocess_text(input_text)
 
+    # Preprocessing scholar results' titles
+    for result in results:
+        result['processed_judul'] = preprocess_text(result['judul'])
+
+    # Calculate similarity score using TF-IDF
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform(
+        [processed_query] + [r['processed_judul'] for r in results]
+    )
+    similarity_scores = cosine_similarity(vectors[0:1], vectors[1:]).flatten()
+
+    # Add similarity scores to the results
+    for i, score in enumerate(similarity_scores):
+        results[i]['similarity'] = score
+
+    # Sort results by similarity score in descending order
+    results = sorted(results, key=lambda x: x['similarity'], reverse=True)
+
+    return results
 
 @app.route('/search', methods=['POST'])
 def search():
